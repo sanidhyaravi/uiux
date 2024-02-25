@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speech Synthesis Example</title>
+</head>
+<style>
+body{
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f784ff;
+}
+h1{
+color: #333;
+text-align: center;
+margin-top: 50px;
+}
+.error-container {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover{
+background-color:#346253;
+}
+
+</style>
+<body>
+<marquee direction="right"> Error page</marquee>
+<h1>Interactive Voice Example</h1>
+    <div class="error-container">
+<h1>Oops! Something went wrong</h1>
+<h1>&#128549</h1>
+<p>We're sorry, but it seems there was an error while processing your request.</p>
+<p>Please try the following:</p>
+<ul>
+<li>Check your internet connection.</li>
+<li><a href="/">Return to the homepage</a></li>
+<li>Contact our <a href="/contact">support team</a>for assistance.</li>
+</ul>
+</div>
+<button onclick="speakText()">Click here to speak</button>
+<script>
+function speakText(){
+var message = new SpeechSynthesisUtterance();
+message.text="Hello, this is an example of changing voice tone in HTML.";
+//Set voice attributes (pitch and rate)
+message.pitch = -100; //Adjust pitch (default is 1)
+message.rate = 0.8; //Adjust pitch (default is 1)
+
+//Use default voice or specify a particular voice
+//message.voice = speechSynthesis.getVoices()[0];//Example: Use the first available voice
+//Speak the text
+window.speechSynthesis.speak(message);
+}
+</script>
+</body>
+<footer>4MC21CS131</footer>
+</html>
